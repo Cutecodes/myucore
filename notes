@@ -4,3 +4,4 @@ x86.h --pack the x86 assember as the c function
 elf.h --simple elf format
 error.h --define the kernel Error number
 unistd.h --define some macro, such as system call number
+atomic.h --x86 Atomic operations 
