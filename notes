@@ -4,4 +4,32 @@ x86.h --pack the x86 assember as the c function
 elf.h --simple elf format
 error.h --define the kernel Error number
 unistd.h --define some macro, such as system call number
-atomic.h --x86 Atomic operations 
+atomic.h --x86 Atomic operations
+dirent.h --struct dirent 
+stat.h --file attributes??
+stdarg.h --variable-argument implent, va_start(ap,last),va_arg(ap,type),va_end()stdio.h -- define basic io function
+stdlib.h --rand() srand() and so on
+string.h --define strlen() strcmp()
+list.h --define and implement the doubly linked list
+skew_heap.h --define and implement the skew_heap
+hash.c --a simple hash function
+printfmt.c --implenment like print("%s",a);
+string.c --implement strlen()...
+rand.c --rand() and srand()
+
+/kern/libs
+stdio.c --console input and output
+string.c --strdup() and stradd()
+readline.c --read a line from console
+
+/
+Makefile
+
+/boot
+asm.h --macros to create gdt
+bootasm.S --Enable A20, probe_memory, load gdt
+bootmain.c --read kernel
+
+/tools
+function.mk
+
