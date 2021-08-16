@@ -21,6 +21,14 @@ rand.c --rand() and srand()
 stdio.c --console input and output
 string.c --strdup() and stradd()
 readline.c --read a line from console
+/kern/init
+entry.S --page va 0-4M and kernel space 0xC0000000 to 0-4M
+init.c --init all module
+/kern/debug ......
+assert.h --define warn(...) panic(...) assert(x)
+stab.h --gdb stab format struct
+kdebug.h --define fun to print kdebug info
+kdebug.c --implement fun to print kdebug info
 
 /
 Makefile
