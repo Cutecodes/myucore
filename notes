@@ -24,6 +24,23 @@ readline.c --read a line from console
 /kern/init
 entry.S --page va 0-4M and kernel space 0xC0000000 to 0-4M
 init.c --init all module
+/kern/driver
+console.h --put a char to console,printfun will call it
+console.c --implement
+kbdreg.h --define keyboard code
+ide.h --ide device ,such as hard disk
+ide.c 
+intr.h --cli and sti
+intr.c
+picirq.h --8259 pic controller
+picirq.c
+clock.h --time and time interrupt
+clock.c 
+
+
+
+
+
 /kern/debug ......
 assert.h --define warn(...) panic(...) assert(x)
 stab.h --gdb stab format struct
