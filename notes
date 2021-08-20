@@ -37,15 +37,13 @@ picirq.c
 clock.h --time and time interrupt
 clock.c 
 
-
-
-
-
-/kern/debug ......
+/kern/debug 
 assert.h --define warn(...) panic(...) assert(x)
 stab.h --gdb stab format struct
 kdebug.h --define fun to print kdebug info
 kdebug.c --implement fun to print kdebug info
+kmonitor.h --fun(int argc,char** argv,struct trap *tf)
+kmonitor.c --implement fun() in kmonitor.h
 
 /
 Makefile
