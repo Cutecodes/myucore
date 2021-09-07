@@ -36,7 +36,6 @@ picirq.h --8259 pic controller
 picirq.c
 clock.h --time and time interrupt
 clock.c 
-
 /kern/debug 
 assert.h --define warn(...) panic(...) assert(x)
 stab.h --gdb stab format struct
@@ -44,6 +43,18 @@ kdebug.h --define fun to print kdebug info
 kdebug.c --implement fun to print kdebug info
 kmonitor.h --fun(int argc,char** argv,struct trap *tf)
 kmonitor.c --implement fun() in kmonitor.h
+/kern/trap
+vectors.S --_vectors trap tables 
+trapentry.S -- the trapentry between c and assember
+trap.h --trap init ,handle trap
+trap.c
+
+/kern/mm
+mmu.h --define constant Eflags register,segment type,segment table item,gdt,idt,tss... and so on,PDX(la) PTX(la)...
+memlayout.h --mem layout and some struct to manage mem
+pmm.h --define the interface to pa manager
+pmm.c --the func to unique the pmm interface and check it
+
 
 /
 Makefile
