@@ -54,6 +54,11 @@ mmu.h --define constant Eflags register,segment type,segment table item,gdt,idt,
 memlayout.h --mem layout and some struct to manage mem
 pmm.h --define the interface to pa manager
 pmm.c --the func to unique the pmm interface and check it
+kmalloc.h --kernel malloc a memory,slab 
+kmalloc.c --implement
+swap.h --define swap_manager
+vmm.h --vma_struct and mm_struct
+vmm.c --do_pgfault
 
 
 /
@@ -67,3 +72,11 @@ bootmain.c --read kernel
 /tools
 function.mk
 
+/user
+*.c --some user app
+/user/libs
+initcode.S --the entry of user app,use ebx and ecx get argc and argv and call umain()
+umain.c --umain() open stdin and stdout ,the call main()
+* --some sys_call
+file.h --..
+dir.h --..
