@@ -16,14 +16,19 @@ hash.c --a simple hash function
 printfmt.c --implenment like print("%s",a);
 string.c --implement strlen()...
 rand.c --rand() and srand()
+----------finished----------
 
 /kern/libs
 stdio.c --console input and output
 string.c --strdup() and stradd()
 readline.c --read a line from console
+----------finished----------
+
 /kern/init
 entry.S --page va 0-4M and kernel space 0xC0000000 to 0-4M
 init.c --init all module
+----------finished----------
+
 /kern/driver
 console.h --put a char to console,printfun will call it
 console.c --implement
@@ -36,6 +41,8 @@ picirq.h --8259 pic controller
 picirq.c
 clock.h --time and time interrupt
 clock.c 
+----------finished----------
+
 /kern/debug 
 assert.h --define warn(...) panic(...) assert(x)
 stab.h --gdb stab format struct
@@ -43,11 +50,14 @@ kdebug.h --define fun to print kdebug info
 kdebug.c --implement fun to print kdebug info
 kmonitor.h --fun(int argc,char** argv,struct trap *tf)
 kmonitor.c --implement fun() in kmonitor.h
+----------finished----------
+
 /kern/trap
 vectors.S --_vectors trap tables 
 trapentry.S -- the trapentry between c and assember
 trap.h --trap init ,handle trap
 trap.c
+----------finished----------
 
 /kern/mm
 mmu.h --define constant Eflags register,segment type,segment table item,gdt,idt,tss... and so on,PDX(la) PTX(la)...
@@ -60,17 +70,32 @@ swap.h --define swap_manager
 vmm.h --vma_struct and mm_struct
 vmm.c --do_pgfault
 
-
+/kern/fs/sfs
+bitmap.h --the bitmap data struct for sfs
+bitmap.c
+sfs.h --define some struct for sfs,such as superblock,inode and so on
+sfs.c --the sys_init()
 /
 Makefile
+----------finished----------
 
 /boot
 asm.h --macros to create gdt
 bootasm.S --Enable A20, probe_memory, load gdt
 bootmain.c --read kernel
+----------finished----------
 
 /tools
-function.mk
+function.mk --makefile funcs
+boot.ld --the boot link script
+kernel.ld --the kernel link script
+user.ld --the user app link script
+gdbinit --config of remote gdb
+grade.sh --??
+mksfs.c --can format the sfs
+sign.c --can generate the first start block 512B
+vector.c --generate the asm code for trap
+----------finished----------
 
 /user
 *.c --some user app
@@ -78,5 +103,7 @@ function.mk
 initcode.S --the entry of user app,use ebx and ecx get argc and argv and call umain()
 umain.c --umain() open stdin and stdout ,the call main()
 * --some sys_call
-file.h --..
-dir.h --..
+file.h --wrap file syscall
+dir.h --wrap dir syscall
+----------finished----------
+ 
