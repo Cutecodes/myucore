@@ -75,6 +75,20 @@ bitmap.h --the bitmap data struct for sfs
 bitmap.c
 sfs.h --define some struct for sfs,such as superblock,inode and so on
 sfs.c --the sys_init()
+
+/kern/fs/devs
+dev.h --define struct device
+dev.c --dev init and wrap the dev ops into inode ops
+dev_disk0.c -- disk dev ,call ide funs
+dev_stdin.c -- read from stdin buffer
+dev_stdout.c --stdout,call cputchar
+----------finished----------
+/kern/fs/swap
+swapfs.h --define swapfs_init(),swapfs_read(),swapfs_write
+swapfs.c --implement the funs directly by using ide_read_secs and ide_write_secs
+----------finished----------
+
+
 /
 Makefile
 ----------finished----------
