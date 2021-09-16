@@ -75,7 +75,11 @@ bitmap.h --the bitmap data struct for sfs
 bitmap.c
 sfs.h --define some struct for sfs,such as superblock,inode and so on
 sfs.c --the sys_init()
-
+sfs_fs.c --struct fs funs,sfs_fs' implement ,the interface
+sfs_inode.c -- the sfs's implement open(),write() the inodes
+sfs_io.c -- io_read() and io_write(),will read/write data on disk
+sfs_lock -- lock
+----------finished----------
 /kern/fs/devs
 dev.h --define struct device
 dev.c --dev init and wrap the dev ops into inode ops
@@ -87,7 +91,16 @@ dev_stdout.c --stdout,call cputchar
 swapfs.h --define swapfs_init(),swapfs_read(),swapfs_write
 swapfs.c --implement the funs directly by using ide_read_secs and ide_write_secs
 ----------finished----------
-
+/kern/fs/vfs
+inode.h -- define srtuct inode and method on it
+inode.c 
+vfs.h -- define struct fs and method on it
+vfs.c
+vfsdev.c --dev list
+vfspath.c --some funs to change the current thread' file struct
+vfslookup.c --according to the path to the inode
+vfsfile.c --vfs open write mkdir and so on
+----------finished----------
 
 /
 Makefile
