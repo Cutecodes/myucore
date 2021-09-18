@@ -101,6 +101,16 @@ vfspath.c --some funs to change the current thread' file struct
 vfslookup.c --according to the path to the inode
 vfsfile.c --vfs open write mkdir and so on
 ----------finished----------
+/kern/fs
+sysfile.h --sys_open() and so on,wrap the file open()
+sysfile.c
+iobuf.h --the buffer class/struct
+iobuf.c
+fs.h --file_struct for therad
+fs.c --init fun
+file.h --struct file to save the open files
+file.c 
+----------finished----------
 
 /
 Makefile
