@@ -119,6 +119,17 @@ file.h --struct file to save the open files
 file.c 
 ----------finished----------
 
+/kern/syscall
+syscall.h
+syscall.c --implement the syscall entry
+----------finished----------
+
+/kern/process
+entry.S --the interface between a fun and a thread
+switch.S --switch the current context to the next
+proc.h --define the pcb struct or called thread class and method on it
+proc.c 
+
 /
 Makefile
 ----------finished----------
