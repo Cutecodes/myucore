@@ -128,7 +128,28 @@ syscall.c --implement the syscall entry
 entry.S --the interface between a fun and a thread
 switch.S --switch the current context to the next
 proc.h --define the pcb struct or called thread class and method on it
-proc.c 
+proc.c
+----------finished----------
+/kern/schedule
+sched.h --define struct timer_t and struct sched_class
+sched.c --funs on struct sched_class and timer_t
+default_sched.h --the default schedule method
+default_sched.c
+default_sched_stride_c
+----------finished----------
+
+/kern/sync
+sync.h --save the eflags 
+sem.h --the semaphore_t
+sem.c --using intr to implement pv
+wait.h --define the wait_t and wait_queue_t
+wait.c 
+monitor.h --define the monitor_t
+monitor.c
+check_sync.c
+----------finished----------
+
+
 
 /
 Makefile
